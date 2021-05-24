@@ -8,7 +8,7 @@ class Movie(models.Model):
 
     name = models.CharField(max_length=254, verbose_name='نام فیلم')
     director = models.CharField(max_length=64, verbose_name='کارگردان')
-    year = models.DateTimeField(verbose_name='تاریخ انتشار')
+    year = models.PositiveIntegerField(verbose_name='تاریخ انتشار')
     length = models.PositiveIntegerField(verbose_name='زمان فیلم')
     country = models.CharField(max_length=64, verbose_name='کشور سازنده')
     language = models.CharField(max_length=32, verbose_name='زبان فیلم')
