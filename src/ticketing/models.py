@@ -17,3 +17,19 @@ class Movie(models.Model):
 
     def __str__(self):
         return self.name
+
+
+class Cinema(models.Model):
+    """
+        Represent a Cinema saloon
+    """
+
+    cinema_code = models.IntegerField(primary_key=True)
+    name = models.CharField(max_length=254, verbose_name='نام سینما')
+    city = models.CharField(max_length=254, verbose_name='شهر')
+    capacity = models.IntegerField(verbose_name='گنچایش سینما')
+    phone = models.CharField(max_length=12, verbose_name='شماره تلفن', blank=True)
+    address = models.TextField(verbose_name='آدرس')
+
+    def __str__(self):
+        return self.name
