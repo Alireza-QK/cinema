@@ -15,6 +15,10 @@ class Movie(models.Model):
     description = models.TextField(verbose_name='توضیحات', blank=True)
     cover = models.ImageField(verbose_name='تصویر فیلم', upload_to='movie/covers/')
 
+    class Meta:
+        verbose_name = 'فیلم'
+        verbose_name_plural = 'فیلم ها'
+
     def __str__(self):
         return self.name
 
@@ -30,6 +34,10 @@ class Cinema(models.Model):
     capacity = models.IntegerField(verbose_name='گنچایش سینما')
     phone = models.CharField(max_length=12, verbose_name='شماره تلفن', blank=True)
     address = models.TextField(verbose_name='آدرس')
+
+    class Meta:
+        verbose_name = 'سینما'
+        verbose_name_plural = 'سینما ها'
 
     def __str__(self):
         return self.name
@@ -64,6 +72,10 @@ class ShowTime(models.Model):
         (SHOW_CANCELED, 'سانس لغو شد')
     )
     status = models.IntegerField(verbose_name='وضعیت سانس', choices=status_choices)
-    
+
+    class Meta:
+        verbose_name = 'سانس'
+        verbose_name_plural = 'سانس ها'
+
     def __str__(self):
         return '{} - {} - {}'.format(self.movie, self.cinema, self.start_time)
