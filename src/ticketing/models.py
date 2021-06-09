@@ -37,7 +37,7 @@ class Cinema(models.Model):
 
 class ShowTime(models.Model):
     """
-        Represents a movie in a cinema at a specfic time
+        Represents a movie in a cinema at a specific time
     """
 
     movie = models.ForeignKey(Movie, on_delete=models.CASCADE, related_name='showtimes')
@@ -46,7 +46,7 @@ class ShowTime(models.Model):
     start_time = models.DateTimeField(verbose_name='تاریخ اکران')
     end_time = models.DateTimeField(verbose_name='تاریخ پایان اکران')
     price = models.BigIntegerField(verbose_name='قیمت بلیت')
-    salabel_seats = models.IntegerField(verbose_name='صندلی های قابل فروش')
+    saleable_seats = models.IntegerField(verbose_name='صندلی های قابل فروش')
     free_seats = models.IntegerField(verbose_name='صندلی های خالی')
 
     SALE_NOT_STARTED = 1
